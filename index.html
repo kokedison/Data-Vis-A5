@@ -3,16 +3,31 @@
 <title>A5 Foreign Minister DataSet</title>
 <link rel="stylesheet" type="text/css" href="./inspector.css">
 <body>
+
+<h2>A5 Foreign Ministers</h2>
+<h3>Experience Filter</h3>
+<div id="expFilter"></div>
+<h3>Manner Out Filter</h3>
+<div id="mannerOutFilter"></div>
+
+<div id="chart"></div>
+<div></div>
 <script type="module">
 
-import define from "./index.js";
-import {Runtime, Library, Inspector} from "./runtime.js";
+	import define from "./index.js";
+	import {Runtime, Library, Inspector} from "./runtime.js";
 
-const runtime = new Runtime();
-const main = runtime.module(define, name => {
-  if (name === "chart") {
-    return new Inspector(document.body);
-  }
-});
-
+	const runtime = new Runtime();
+	const main = runtime.module(define, name => {
+		if (name === "chart") {
+			return new Inspector.into("#chart")();
+		}
+		if (name === "viewof expFilter"){
+			return new Inspector.into("#expFilter")();	
+		}
+		if (name === "viewof mannerOutFilter"){
+			return new Inspector.into("#mannerOutFilter")();	
+		}
+	}	
+);
 </script>
