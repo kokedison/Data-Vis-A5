@@ -1,6 +1,6 @@
 # A5 Foreign Minister DataSet
 
-https://observablehq.com/d/6d66c92edef987e9@1468
+https://observablehq.com/d/6d66c92edef987e9
 
 View this notebook in your browser by running a web server in this folder. For
 example:
