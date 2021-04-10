@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>A5 Foreign Minister DataSet</title>
-<link rel="stylesheet" type="text/css" href="./inspector.css">
+<!-- <link rel="stylesheet" type="text/css" href="./inspector.css"> -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
 <body>
 
 <h2>A5 Foreign Ministers</h2>
@@ -15,7 +16,7 @@
 <script type="module">
 
 	import define from "https://api.observablehq.com/d/6d66c92edef987e9.js?v=3";
-	import {Runtime, Library, Inspector} from "./runtime.js";
+	import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 
 	const runtime = new Runtime();
 	const main = runtime.module(define, name => {
