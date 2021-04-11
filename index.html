@@ -45,7 +45,9 @@
 		</div>
 	</div>
   	<div class="container themed-container">
-  		</br>  	
+  		<br>  	
+  		<div id="flags"></div>
+  		<div id="legend"></div>
 		<div id="chart"></div>
 	</div>
 	<!-- Fetch components from Observable-->
@@ -60,11 +62,17 @@
 			if (name === "chart") {
 				return new Inspector.into("#chart")();
 			}
-			if (name === "viewof expFilter"){
+			else if (name === "viewof expFilter"){
 				return new Inspector.into("#expFilter")();	
 			}
-			if (name === "viewof mannerOutFilter"){
+			else if (name === "viewof mannerOutFilter"){
 				return new Inspector.into("#mannerOutFilter")();	
+			}
+			else if (name === "flags"){
+				return new Inspector.into("#flags")();	
+			}
+			else if (name === "legend"){
+				return new Inspector.into("#legend")();	
 			}
 		});
 	</script>
