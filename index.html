@@ -1,34 +1,70 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>A5 Foreign Minister DataSet</title>
-<!-- <link rel="stylesheet" type="text/css" href="./inspector.css"> -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h2>A5 Foreign Ministers</h2>
-<h3>Experience Filter</h3>
-<div id="expFilter"></div>
-<h3>Manner Out Filter</h3>
-<div id="mannerOutFilter"></div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-<div id="chart"></div>
-<div></div>
-<script type="module">
+    <!-- Observable CSS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css">
 
-	import define from "https://api.observablehq.com/d/6d66c92edef987e9.js?v=3";
-	import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    <title>Foreign Ministers: World Diplomacy in 200 Years</title>
+  </head>
+  <body>
+  	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  		<div class="col-md-8 p-lg-5 mx-auto my-5">
+  			<h1 class="display-2 fw-bold">Foreign Ministers</h1>
+  			<h1 class="display-6 fw-bold">World Diplomacy in 200 Years</h1>
+  			<p class="lead fw-normal">This is a chart about the world’s Foreign Ministers in the past 200 years. These 1,300 top diplomats represented the world’s 13 former and current great powers. They were on the center stage of human history, declaring wars and negotiating peace. As great powers rose and fell, their decisions influenced the fate of billions. </p>
+  			<p class="lead fw-normal">But what about their own fate? Each Foreign Minister has a story. They were former soldiers, lawyers, farmers and priests. Some served for a long time, but many ended their terms early. Here is your chance to explore their backgrounds, their tenures, and the fashions in which they left office. You will also see major international events and conflicts along the timeline, since the French Revolution. Who is your favorite Foreign Minister?</p>
+  			<!-- <a class="btn btn-outline-secondary" href="#">Coming soon</a> -->
+  		</div>
+  		<div class="product-device shadow-sm d-none d-md-block"></div>
+    	<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+	</div>
+	<div class="container">
+		<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+			<div class="bg-dark pt-3 px-3 pt-md-3 px-md-5 text-center text-white overflow-hidden w-100">
+				<div class="my-3 py-3">
+					<h3 class="display-6">Prior Experience</h3>
+					<div id="expFilter"></div>
+				</div>
+			</div>
+			<div class="bg-light pt-3 px-3 pt-md-3 px-md-5 text-center overflow-hidden w-100">
+				<div class="my-3 p-3">
+					<h3 class="display-6">Reason of Leaving the Post</h3>
+					<div id="mannerOutFilter"></div>
+				</div>
+			</div>
 
-	const runtime = new Runtime();
-	const main = runtime.module(define, name => {
-		if (name === "chart") {
-			return new Inspector.into("#chart")();
-		}
-		if (name === "viewof expFilter"){
-			return new Inspector.into("#expFilter")();	
-		}
-		if (name === "viewof mannerOutFilter"){
-			return new Inspector.into("#mannerOutFilter")();	
-		}
-	}	
-);
-</script>
+		</div>
+	</div>
+  	<div class="container themed-container">
+  		</br>  	
+		<div id="chart"></div>
+	</div>
+	<!-- Fetch components from Observable-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script type="module">
+
+		import define from "https://api.observablehq.com/d/6d66c92edef987e9.js?v=3";
+		import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+		const runtime = new Runtime();
+		const main = runtime.module(define, name => {
+			if (name === "chart") {
+				return new Inspector.into("#chart")();
+			}
+			if (name === "viewof expFilter"){
+				return new Inspector.into("#expFilter")();	
+			}
+			if (name === "viewof mannerOutFilter"){
+				return new Inspector.into("#mannerOutFilter")();	
+			}
+		});
+	</script>
+  </body>
+</html>
