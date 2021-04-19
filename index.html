@@ -77,6 +77,51 @@
 		<!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
 	  <!-- <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
   </div>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
+	<div class="col-md-8 pt-lg-5 mx-auto my-5">
+		<h1 class="display-6 fw-bold">Introduction</h1>
+	</div>
+	<div class="col-md-8 mx-auto my-5">
+		<p class="lead fw-normal">The Foreign Ministers project explores 200 years of world diplomacy through 1,100 top diplomats — all officials holding such a post between 1789 and the mid-2010s in the world’s 13 former and current great powers. Our goal is to provide a complete timeline, together with biographic information and relevant historical events, for those interested in history and international affairs. </p>
+	</div>
+	<div class="col-md-8 pt-lg-5 mx-auto my-5">
+		<h1 class="display-6 fw-bold">Methodology and Related Work</h1>
+	</div>
+	<div class="col-md-8 mx-auto my-5">
+		<p class="lead fw-normal">Using a newly compiled dataset by Lund University, our timeline of foreign ministers is the most comprehensive to date. The dataset, published along a political science study in January 2021, included extensive information such as prior occupations, party affiliations, and reasons for leaving office. </p>
+		<p class="lead fw-normal">To enrich the visualization, we added a profile image and short biography for each foreign minister.We also added world events by year. For the latter, we were able to filter from an open-source history dataset to include only relevant international conflicts and treaties.</p>
+		<p class="lead fw-normal">For profile information, we retrieved from Wikipedia the first paragraph of each foreign minister’s bio and the link to their portrait image on the page. If a foreign minister’s Wikipedia page could not be found, their corresponding circle is greyed out. Then, we went through each profile and manually corrected dozens of mismatches. We included only English-language Wikipedia pages.</p>
+		<p class="lead fw-normal">To our knowledge, this project is the first of its kind. A <a href="http://felixidelberger.de/"> data blogger</a> mentioned the Lund University dataset in one of their posts, but did not build a timeline. The Visual Capitalist recently <a href="https://www.visualcapitalist.com/visualized-world-leaders-in-positions-of-power/">published a timeline</a> of world leaders from15 countries, but it covered only 50 years and did not concern foreign ministers.</p>
+	</div>
+	<div class="col-md-8 pt-lg-5 mx-auto my-5">
+		<h1 class="display-6 fw-bold">Design and Implementation</h1>
+	</div>
+	<div class="col-md-8 mx-auto my-5">
+		<p class="lead fw-normal">The design of our timeline drew inspiration from the 2018 “World through the Eyes of the US” visualization by The Pudding. Our timeline followed the chronological order as the user scrolls down, with each foreign minister represented as a dot and their tenures as vertical rectangles along the timeline. </p>
+		<p class="lead fw-normal">By default, each foreign minister is color-coded by the manner in which they left office, as described in the legend on the right. To encourage user exploration, we implemented two filters that can interact with the color-coding: the “Prior Occupation” filter and the “Manner of Leaving the Post” filter. The filters grey out characters that do not satisfy the specified criterion, giving users the ability to focus on a subset of the data.</p>
+		<p class="lead fw-normal">When a user hovers over a year (row), historical events of that year get displayed on the left. Meanwhile, the dots within that year, representing all the ministers who were in office during the time, expand into circles with the corresponding ministers’ portraits. Then, when the user hovers directly over a portrait, it would expand and display a short introduction (name, office term, and short biography) of that foreign minister.</p>
+		<p class="lead fw-normal">During earlier iterations of our designs, we had all minister portraits showing up by default. However, we soon realized that all the images would overwhelm and intimidate users. Hence, we decided to minimize them into dots and show images only one year at a time. </p>
+		<p class="lead fw-normal">We built our visualization in Observable using D3, and then migrated it to a Github page. We used the Wikipedia API with a python library wrapper (wikipedia library) for bios and images. We used the tidyverse package and in R for data cleaning and filtering.</p>
+	</div>
+	<div class="col-md-8 pt-lg-5 mx-auto my-5">
+		<h1 class="display-6 fw-bold">Discussion and Future Work</h1>
+	</div>
+	<div class="col-md-8 mx-auto my-5">
+		<p class="lead fw-normal">This project was completed under tight school deadlines with all team members working remotely. Since the publication of this project, we have received constructive feedback from our peers and our professors. Many mentioned that they enjoyed exploring the visualization in conjunction with the world events on the side.</p>
+		<p class="lead fw-normal">However, we are aware of the performance issue when loading the images. Some images can take more than 3~5 seconds to load, making the browsing experience a bit laggy. Because the visualization was built in Observable, we were limited in the ways we could load images. We tried downloading and pre-loading the images in Observable, but found out that the platform does not allow dynamic file linking. For similar reasons, we were not able to change the country flags dynamically as the timeline progresses.  Fixing these two issues would have been our top priority if we had more time to work on this project.</p>
+	</div>
+	<div class="col-md-8 pt-lg-5 mx-auto my-5">
+		<h1 class="display-6 fw-bold">Acknowledgements or References</h1>
+	</div>
+	<div class="col-md-8 mx-auto my-5">
+		<p class="lead fw-normal">We would like to thank Professor Agnes Chang for the guidance and advice she gave to this project. We would also like to thank Professor Eugene Wu and our peers at Columbia University for their valuable feedback. Foreign minister names, in/out-of-office dates and personal background information from the Lund University’s Foreign Minister Dataset. Pictures and bios collected from the Wikipedia API. Historical events filtered down to include only international conflicts and treaties, from the Historic Events Data Set © Nolan Hemmatazad / Wikimedia Commons / CC-BY-SA-3.0.</p>
+	</div>
+	<!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
+  <!-- <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
+</div>
+	<!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
+  <!-- <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
+</div>
 	<!-- Fetch components from Observable-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 	<script type="module">
